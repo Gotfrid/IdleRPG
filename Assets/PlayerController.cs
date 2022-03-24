@@ -4,8 +4,8 @@ public class PlayerController : MonoBehaviour
 {
 
     // Constant speed of the player's movement
-    [SerializeField] private float MoveSpeed = 1000f;
-    [SerializeField] private float SideSpeed = 10f;
+    [SerializeField] private float MoveSpeed = 5f;
+    [SerializeField] private float SideSpeed = 20000;
     [SerializeField] private Rigidbody rb;
 
     private float HorizontalMovement;
@@ -17,14 +17,10 @@ public class PlayerController : MonoBehaviour
     private void FixedUpdate()
     {
         // Move forward constantly
-        rb.AddForce(0, 0, MoveSpeed * Time.fixedDeltaTime);
+        rb.velocity = new Vector3(0, 0, MoveSpeed);
 
         // Move sideways
         HorizontalMovement = Input.GetAxis("Horizontal");
-        if (HorizontalMovement != 0)
-        {
-            Debug.Log(HorizontalMovement);
-        }
         rb.AddForce(SideSpeed * HorizontalMovement * Time.fixedDeltaTime, 0, 0);
     }
 

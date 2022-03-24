@@ -9,6 +9,8 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private Rigidbody rb;
 
     private float HorizontalMovement;
+    private float LeftBoundary = -4f;
+    private float RightBoundary = 4f;
 
     private void Start() {
         rb.constraints = RigidbodyConstraints.FreezeRotation;
@@ -22,6 +24,16 @@ public class PlayerController : MonoBehaviour
         // Move sideways
         HorizontalMovement = Input.GetAxis("Horizontal");
         rb.AddForce(SideSpeed * HorizontalMovement * Time.fixedDeltaTime, 0, 0);
-    }
 
+        // Set movement boundaries
+        // TODO: is there a way to do it better?
+        if (rb.position.x <= LeftBoundary)
+        {
+            rb.position = new Vector3(LeftBoundary, rb.position.y, rb.position.z);
+        }
+        if (rb.position.x >= RightBoundary)
+        {
+            rb.position = new Vector3(RightBoundary, rb.position.y, rb.position.z);
+        }
+    }
 }

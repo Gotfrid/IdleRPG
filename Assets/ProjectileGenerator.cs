@@ -7,7 +7,7 @@ public class ProjectileGenerator : MonoBehaviour
     [SerializeField] private Transform Player;
     [SerializeField] private GameObject Projectile;
 
-    private Vector3 ProjectileOffset = new Vector3(0, -1, 1);
+    private Vector3 ProjectileOffset = new Vector3(0f, -0.75f, 1f);
 
     private void Update() {
         if (Input.GetKeyDown("space"))

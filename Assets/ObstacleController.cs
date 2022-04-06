@@ -14,6 +14,10 @@ public class ObstacleController : MonoBehaviour
             Destroy(other.gameObject);
             takeDamage(IncomingDamage);
         }
+
+        if (other.collider.tag == "Player") {
+            GameOver(other.gameObject);
+        }
     }
 
     private void Update() {
@@ -24,5 +28,10 @@ public class ObstacleController : MonoBehaviour
 
     private void takeDamage(int amount) {
         ObstacleHP -= amount;
+    }
+
+    private void GameOver(GameObject PlayerObject) {
+        Destroy(PlayerObject);
+        // some UI logic here as well
     }
 }

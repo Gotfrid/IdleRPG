@@ -14,7 +14,7 @@ public class Projectile : MonoBehaviour
     Bullet = GetComponent<Rigidbody>();
     Bullet.AddRelativeForce(Vector3.forward * BulletForce, ForceMode.Impulse);
 
-    Destroy(gameObject, 1.2f);
+    Destroy(gameObject, 1.5f);
   }
 
 }

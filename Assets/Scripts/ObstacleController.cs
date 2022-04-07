@@ -32,7 +32,7 @@ public class ObstacleController : MonoBehaviour
   {
     HealthText = GetComponentInChildren<TextMeshProUGUI>();
     int PlayerTotalDamage = DataContainer.Damage * DataContainer.Units;
-    ObstacleHP = Random.Range(PlayerTotalDamage * 5, PlayerTotalDamage * 15);
+    ObstacleHP = Random.Range(PlayerTotalDamage * 3, PlayerTotalDamage * 10);
     HealthText.text = ObstacleHP.ToString();
   }
 

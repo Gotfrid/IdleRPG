@@ -5,39 +5,47 @@ using TMPro;
 
 public class ObstacleController : MonoBehaviour
 {
-    public int ObstacleHP = 10;
-    
-    private TextMeshProUGUI HealthText;
+  public int ObstacleHP = 10;
 
-    private void OnCollisionEnter(Collision other) {
-        if (other.collider.tag == "Projectile") {
-            Destroy(other.gameObject);
-            takeDamage(DataContainer.Damage);
-        }
+  private TextMeshProUGUI HealthText;
 
-        if (other.collider.tag == "Player") {
-            GameOver(other.gameObject);
-        }
+  private void OnCollisionEnter(Collision other)
+  {
+    if (other.collider.tag == "Projectile")
+    {
+      Destroy(other.gameObject);
+      takeDamage(DataContainer.Damage);
     }
 
-    private void Start() {
-        HealthText = GetComponentInChildren<TextMeshProUGUI>();
+    if (other.collider.tag == "Player")
+    {
+      GameOver(other.gameObject);
     }
+  }
 
-    private void Update() {
-        if (ObstacleHP <= 0) {
-            Destroy(gameObject);
-            DataContainer.Score += 1;
-        }
-    }
+  private void Start()
+  {
+    HealthText = GetComponentInChildren<TextMeshProUGUI>();
+  }
 
-    private void takeDamage(int amount) {
-        ObstacleHP -= amount;
-        HealthText.text = ObstacleHP.ToString();
+  private void Update()
+  {
+    if (ObstacleHP <= 0)
+    {
+      Destroy(gameObject);
+      DataContainer.Score += 1;
     }
+  }
 
-    private void GameOver(GameObject PlayerObject) {
-        Destroy(PlayerObject);
-        GameController.GameOver();
-    }
+  private void takeDamage(int amount)
+  {
+    ObstacleHP -= amount;
+    HealthText.text = ObstacleHP.ToString();
+  }
+
+  private void GameOver(GameObject PlayerObject)
+  {
+    Destroy(PlayerObject);
+    GameController.GameOver();
+  }
 }

@@ -5,15 +5,16 @@ using UnityEngine;
 public class Projectile : MonoBehaviour
 {
 
-    private Rigidbody Bullet;
-    private float BulletForce = 30f;
+  private Rigidbody Bullet;
+  private float BulletForce = 30f;
 
-    private void Start() {
-        Bullet = GetComponent<Rigidbody>();
-        // Bullet.AddForce(0, 0, 50, ForceMode.Impulse);
-        Bullet.AddRelativeForce(Vector3.forward * BulletForce, ForceMode.Impulse);
+  private void Start()
+  {
+    Bullet = GetComponent<Rigidbody>();
+    // Bullet.AddForce(0, 0, 50, ForceMode.Impulse);
+    Bullet.AddRelativeForce(Vector3.forward * BulletForce, ForceMode.Impulse);
 
-        Destroy(gameObject, 1.2f);
-    }
+    Destroy(gameObject, 1.2f);
+  }
 
 }

@@ -4,11 +4,12 @@ using UnityEngine;
 
 public class DataContainer : MonoBehaviour
 {
-    public static int Damage;
-    public static int Score;
+  public static int Damage;
+  public static int Score;
 
-    private void Start() {
-        Damage = 1;
-        Score = 0;
-    }
+  private void Start()
+  {
+    Damage = 1;
+    Score = 0;
+  }
 }

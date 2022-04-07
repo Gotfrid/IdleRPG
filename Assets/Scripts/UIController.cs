@@ -1,22 +1,25 @@
 using UnityEngine;
 using TMPro;
 
-public class UIController : MonoBehaviour {
-    
-    private TextMeshProUGUI ScoreValueUI;
-    private TextMeshProUGUI DamageValueUI;
+public class UIController : MonoBehaviour
+{
 
-    private void Start() {
-        ScoreValueUI = GameObject
-            .FindGameObjectWithTag("ScoreValue")
-            .GetComponent<TextMeshProUGUI>();
-        DamageValueUI = GameObject
-            .FindGameObjectWithTag("DamageValue")
-            .GetComponent<TextMeshProUGUI>();
-    }
+  private TextMeshProUGUI ScoreValueUI;
+  private TextMeshProUGUI DamageValueUI;
 
-    private void Update() {
-        ScoreValueUI.text = DataContainer.Score.ToString();
-        DamageValueUI.text = DataContainer.Damage.ToString();
-    }
+  private void Start()
+  {
+    ScoreValueUI = GameObject
+        .FindGameObjectWithTag("ScoreValue")
+        .GetComponent<TextMeshProUGUI>();
+    DamageValueUI = GameObject
+        .FindGameObjectWithTag("DamageValue")
+        .GetComponent<TextMeshProUGUI>();
+  }
+
+  private void Update()
+  {
+    ScoreValueUI.text = DataContainer.Score.ToString();
+    DamageValueUI.text = DataContainer.Damage.ToString();
+  }
 }

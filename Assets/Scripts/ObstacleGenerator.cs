@@ -47,6 +47,7 @@ public class ObstacleGenerator : MonoBehaviour
     // Generate ground
     if (Player.position.z > (DistanceToNextGround * NumberOfGrounds))
     {
+      NumberOfGrounds += 1;
       Instantiate(
         GroundPrefab,
         new Vector3(0, 0, Player.position.z + (GroundLength / 2)),

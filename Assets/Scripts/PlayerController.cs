@@ -6,7 +6,8 @@ public class PlayerController : MonoBehaviour
   // Constant speed of the player's movement
   [SerializeField] private float MoveSpeed;
   [SerializeField] private float SideSpeed = 20000;
-  [SerializeField] private Rigidbody rb;
+  
+  private Rigidbody rb;
 
   private float HorizontalMovement;
   private float LeftBoundary = -4f;
@@ -14,6 +15,7 @@ public class PlayerController : MonoBehaviour
 
   private void Start()
   {
+    rb = GetComponent<Rigidbody>();
     rb.constraints = RigidbodyConstraints.FreezeRotation;
   }
 

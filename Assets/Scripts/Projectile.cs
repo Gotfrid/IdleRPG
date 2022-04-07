@@ -17,4 +17,13 @@ public class Projectile : MonoBehaviour
     Destroy(gameObject, 1.5f);
   }
 
+  private void OnCollisionEnter(Collision other) {
+    if (other.gameObject.tag == "Player")
+    {
+      Physics.IgnoreCollision(
+        other.collider,
+        GetComponent<SphereCollider>()
+      );   
+    }
+  }
 }

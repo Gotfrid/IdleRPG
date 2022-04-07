@@ -5,8 +5,7 @@ using TMPro;
 
 public class ObstacleController : MonoBehaviour
 {
-  public int ObstacleHP = 10;
-
+  private int ObstacleHP;
   private TextMeshProUGUI HealthText;
 
   private void OnCollisionEnter(Collision other)
@@ -32,6 +31,9 @@ public class ObstacleController : MonoBehaviour
   private void Start()
   {
     HealthText = GetComponentInChildren<TextMeshProUGUI>();
+    int PlayerTotalDamage = DataContainer.Damage * DataContainer.Units;
+    ObstacleHP = Random.Range(PlayerTotalDamage * 5, PlayerTotalDamage * 15);
+    HealthText.text = ObstacleHP.ToString();
   }
 
   private void Update()

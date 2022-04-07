@@ -13,7 +13,7 @@ public class Projectile : MonoBehaviour
         // Bullet.AddForce(0, 0, 50, ForceMode.Impulse);
         Bullet.AddRelativeForce(Vector3.forward * BulletForce, ForceMode.Impulse);
 
-        Destroy(gameObject, 1.5f);
+        Destroy(gameObject, 1.2f);
     }
 
 }

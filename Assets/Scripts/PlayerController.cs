@@ -4,7 +4,7 @@ public class PlayerController : MonoBehaviour
 {
 
   // Constant speed of the player's movement
-  [SerializeField] private float MoveSpeed = 5f;
+  [SerializeField] private float MoveSpeed;
   [SerializeField] private float SideSpeed = 20000;
   [SerializeField] private Rigidbody rb;
 
@@ -20,6 +20,7 @@ public class PlayerController : MonoBehaviour
   private void FixedUpdate()
   {
     // Move forward constantly
+    MoveSpeed = DataContainer.Speed;
     rb.velocity = new Vector3(0, 0, MoveSpeed);
 
     // Move sideways

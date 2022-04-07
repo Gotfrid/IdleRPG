@@ -6,12 +6,12 @@ public class Projectile : MonoBehaviour
 {
 
   private Rigidbody Bullet;
-  private float BulletForce = 30f;
+  private float BulletForce;
 
   private void Start()
   {
+    BulletForce = DataContainer.Speed * 2.5f;
     Bullet = GetComponent<Rigidbody>();
-    // Bullet.AddForce(0, 0, 50, ForceMode.Impulse);
     Bullet.AddRelativeForce(Vector3.forward * BulletForce, ForceMode.Impulse);
 
     Destroy(gameObject, 1.2f);

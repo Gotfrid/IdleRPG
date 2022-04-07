@@ -33,7 +33,7 @@ public class ObstacleGenerator : MonoBehaviour
       // Only generate a bonus after every second row of obstacles
       if (NumberOfRows % 2 == 0)
       {
-        GenerateBonus(Random.Range(0, 2));
+        GenerateBonus(Random.Range(0, 3));
       }
     }
   }

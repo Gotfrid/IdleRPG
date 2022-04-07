@@ -10,6 +10,8 @@ TagManager:
   - BonusDamage
   - BonusSpeed
   - BonusUnit
+  - Ground
+  - SpeedValue
   layers:
   - Default
   - TransparentFX

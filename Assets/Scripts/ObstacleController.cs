@@ -19,7 +19,13 @@ public class ObstacleController : MonoBehaviour
 
     if (other.collider.tag == "Player")
     {
-      GameOver(other.gameObject);
+      Destroy(other.gameObject);
+      Destroy(gameObject);
+      DataContainer.Units -= 1;
+      if (DataContainer.Units < 1)
+      {
+        GameController.GameOver();
+      }
     }
   }
 
@@ -41,11 +47,5 @@ public class ObstacleController : MonoBehaviour
   {
     ObstacleHP -= amount;
     HealthText.text = ObstacleHP.ToString();
-  }
-
-  private void GameOver(GameObject PlayerObject)
-  {
-    Destroy(PlayerObject);
-    GameController.GameOver();
   }
 }

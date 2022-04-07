@@ -7,6 +7,9 @@ TagManager:
   - Projectile
   - ScoreValue
   - DamageValue
+  - BonusDamage
+  - BonusSpeed
+  - BonusUnit
   layers:
   - Default
   - TransparentFX

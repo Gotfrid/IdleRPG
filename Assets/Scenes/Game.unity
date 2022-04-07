@@ -742,6 +742,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Player: {fileID: 1466685701}
   Obstacle: {fileID: 7829533617555012314, guid: ea29e0000198e425a9c61ce401b1c11b, type: 3}
+  BonusObject: {fileID: 746348786181711587, guid: 3150b55f76ae44598a0d6ff0f48db62e, type: 3}
   DistanceToNextObstacle: 40
 --- !u!4 &1320861983
 Transform:

@@ -12,6 +12,7 @@ TagManager:
   - BonusUnit
   - Ground
   - SpeedValue
+  - UnitsValue
   layers:
   - Default
   - TransparentFX
